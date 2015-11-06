@@ -14,8 +14,13 @@ describe 'Server Service' do
     expect(last_response).to be_ok
   end
 
-  it "should post from the home page" do
-    post '/search'
+  # it "should post from the home page" do
+  #   post '/search'
+  #   expect(last_response).to be_ok
+  # end
+
+    it "should load from the posters" do
+    get '/posters'
     expect(last_response).to be_ok
   end
 end
