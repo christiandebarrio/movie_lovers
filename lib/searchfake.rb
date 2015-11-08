@@ -24,7 +24,7 @@ class SearchFake
     unless text_search == ""
       poster = "http://ia.media-imdb.com/images/M/MV5BMTYwNjAyODIyMF5BMl5BanBnXkFtZTYwNDMwMDk2.jpg"
       @movies << MovieFake.new("id", text_search, "http://imdb.com/", "")
-      5.times {@movies << MovieFake.new("id", text_search, "http://imdb.com/", poster)}
+      8.times {@movies << MovieFake.new("id", text_search, "http://imdb.com/", poster)}
 
       #by this way doesn't work the @@number_movies
     end
