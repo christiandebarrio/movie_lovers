@@ -1,9 +1,15 @@
 class MovieFake
-  attr_reader :id, :title, :url
-  def initialize id, title, url
-    @id = id
-    @title = title
+  attr_reader :id, :title, :url, :poster
+
+  @@number_movies = 0
+
+  def initialize id, title, url, poster
+    @@number_movies += 1
+    @id = @@number_movies
+    @title = title + " (" + @id.to_s + ")"
     @url = url
+    @poster = poster
+    
   end
 
 end
@@ -13,16 +19,17 @@ class SearchFake
   attr_accessor :text, :movies
 
   def initialize text_search
-    @text_search = text_search
     @movies = []
-    @movie = MovieFake.new("1","Batman (1989)", "http://akas.imdb.com/")
-    9.times {@movies << @movie}
-    if @text_search == ""
-      @movies = []
-    else
-      @movies
+
+    unless text_search == ""
+      poster = "http://ia.media-imdb.com/images/M/MV5BMTYwNjAyODIyMF5BMl5BanBnXkFtZTYwNDMwMDk2.jpg"
+      @movies << MovieFake.new("id", text_search, "http://imdb.com/", "")
+      5.times {@movies << MovieFake.new("id", text_search, "http://imdb.com/", poster)}
+
+      #by this way doesn't work the @@number_movies
     end
-    @movies
+
+    
   end
 
 end

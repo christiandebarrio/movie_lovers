@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Movie Lovers - Posters</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+  <h1>Movie Lovers!</h1>
+  <h2>Fun movie quiz</h2>
+    <div>
+      <% @movies_list.each do |movie| %>
+        <img class="img-rounded" margin="30px" height="300px" width="200px" src="<%= movie.poster %>" alt="poster_image">
+      <% end %>
+    </div>
+</div>
+</body>
+</html>
